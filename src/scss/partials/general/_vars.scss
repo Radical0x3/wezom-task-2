@@ -1,0 +1,39 @@
+$maxWidth: 1920;
+$maxWidthContainer: 1520;
+
+$primary-grey: #5c6d7d;
+$secondary-grey: #dde8f0;
+$primary-green: #47b39c;
+$secondary-green: #219653;
+$dark-green: #0d4128;
+$primary-red: #eb5757;
+$primary-blue: #33485d;
+$secondary-blue: #5c6d7d;
+$primary-yellow: #ffcb6d;
+$secondary-yellow: #ffa800;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type: 1) {
+  $addSize: $startSize - $minSize;
+
+  @if $type == 1 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - 320px) / #{$maxWidthContainer - 320})
+      );
+    }
+  } @else if $type == 2 {
+    //Только если больше контейнера
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+      );
+    }
+  } @else {
+    #{$property}: calc(
+      #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+    );
+  }
+}
