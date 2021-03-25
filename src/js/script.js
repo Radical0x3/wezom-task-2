@@ -1,10 +1,15 @@
 $(document).ready(function () {
+  // Switch between tabs
   $(".tabs__link").on("click", function () {
-    let parent = $(this).parent();
+    let target = $(this).attr("href").slice(1);
+    $(".tabs-item.active").removeClass("active");
+    $(`#${target}`).addClass("active");
+
     $(".tabs__item.active").removeClass("active");
-    parent.addClass("active");
+    $(this).parent().addClass("active");
   });
 
+  // Initialise vertical slider
   $(".product__slider").slick({
     slidesToShow: 4,
     vertical: true,
@@ -26,6 +31,7 @@ $(document).ready(function () {
     ],
   });
 
+  // Initialise big slider
   $(".product__big-slider").slick({
     asNavFor: ".product__slider",
     infinite: false,
@@ -41,6 +47,7 @@ $(document).ready(function () {
     moveFooterIcons();
   });
 
+  // Load comments from JSON to About Tab
   $("#tab-1 .comments__btn").on("click", function (e) {
     e.preventDefault();
     let target = $("#tab-1 .comments__list");
@@ -48,6 +55,7 @@ $(document).ready(function () {
     loadComments(target, commentsCount);
   });
 
+  // Load comments from JSON to Comments Tab
   $("#tab-4 .comments__btn").on("click", function (e) {
     e.preventDefault();
     let target = $("#tab-4 .comments__list");
@@ -55,13 +63,17 @@ $(document).ready(function () {
     loadComments(target, commentsCount);
   });
 
+  // Set input mask for telephone number
   $(".subscribe__tel").mask("+38 (099) 99 - 99 - 999");
 
+  // Change active slide of the big slider by clicking on the slide
+  // of the small (vertical) slider
   $(".product__slider .slick-slide").on("click", function () {
     let id = $(this).attr("data-slick-index");
     $(".product__big-slider").slick("slickGoTo", id);
   });
 
+  // Accordion
   $(".product__payment-header").on("click", function () {
     let target = $(this).next(".product__payment-body");
 
@@ -76,12 +88,7 @@ $(document).ready(function () {
     }
   });
 
-  $(".tabs__link").on("click", function (e) {
-    let target = $(this).attr("href").slice(1);
-    $(".tabs-item.active").removeClass("active");
-    $(`#${target}`).addClass("active");
-  });
-
+  // Go to tab
   $(".link-to-tab").on("click", function () {
     let target = $(this).attr("href").slice(1);
     let id = target.slice(-1);
@@ -97,7 +104,7 @@ $(document).ready(function () {
     $(this).toggleClass("active");
   });
 
-  // <------ Button scroll-up START ------>
+  // Scroll to top
   $("a").on("click", function (e) {
     let href = $(this).attr("href");
 
@@ -121,6 +128,7 @@ $(document).ready(function () {
   });
   toggleBtnUp();
 
+  // Toggle button for scrolling up
   function toggleBtnUp() {
     let btnUp = $(".button-up");
     if ($(window).scrollTop() > 0) {
@@ -129,9 +137,9 @@ $(document).ready(function () {
       btnUp.removeClass("show");
     }
   }
-  // <------ Button scroll-up END ------>
 });
 
+// Initialise third slider
 function checkGoodsSlider() {
   const data = $(".goods__list").attr("data-slick");
   const sliderOptions = JSON.parse(data);
@@ -184,6 +192,7 @@ function checkGoodsSlider() {
   }
 }
 
+// Move some footer icons
 function moveFooterIcons() {
   let block = $(".payments");
   let windowInnerWidth = window.innerWidth;
@@ -195,6 +204,7 @@ function moveFooterIcons() {
   }
 }
 
+// Load comments from JSON
 function loadComments(target, commentsCount) {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", "../data.json", true);

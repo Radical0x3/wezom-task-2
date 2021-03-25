@@ -1,0 +1,46 @@
+.rating {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    flex-direction: row-reverse;
+
+    &[data-total-value="1"] .rating__item:nth-child(n + 5),
+    &[data-total-value="2"] .rating__item:nth-child(n + 4),
+    &[data-total-value="3"] .rating__item:nth-child(n + 3),
+    &[data-total-value="4"] .rating__item:nth-child(n + 2),
+    &[data-total-value="5"] .rating__item:nth-child(n + 1) {
+      color: $secondary-yellow;
+    }
+  }
+
+  &__item {
+    @include adaptive-value(font-size, 18, 14);
+    color: rgba($secondary-yellow, 0.5);
+    transition: color 0.2s;
+
+    &:not(:first-child) {
+      margin-right: 2px;
+    }
+
+    &:first-child {
+      margin-right: 8px;
+    }
+  }
+
+  &__votes {
+    font-family: "Nunito";
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    color: $primary-blue;
+    border-bottom: 1px solid rgba($secondary-blue, 0.5);
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary-green;
+      border-bottom-color: $primary-green;
+    }
+  }
+}

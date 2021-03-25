@@ -1,0 +1,80 @@
+.subscribe {
+  background: $dark-green;
+  border-radius: 3px;
+  @include adaptive-value(padding-top, 33, 15);
+  @include adaptive-value(padding-bottom, 50, 25);
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .block-title {
+    @include adaptive-value(font-size, 30, 16);
+    @include adaptive-value(line-height, 36, 22);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    @include adaptive-value(margin-bottom, 20, 10);
+  }
+
+  &__form {
+    display: flex;
+    width: 43%;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 3px;
+
+    @media (max-width: 1110px) {
+      width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
+
+    @media (max-width: 510px) {
+      width: 100%;
+    }
+
+    input {
+      @include adaptive-value(font-size, 16, 11);
+      @include adaptive-value(line-height, 20, 16);
+      margin: -1px;
+
+      &[type="tel"] {
+        @include adaptive-value(padding, 18, 5);
+        width: 64%;
+        color: $secondary-blue;
+        border-radius: 3px 0 0 3px;
+        transition: box-shadow 0.3s;
+
+        &:focus {
+          box-shadow: inset 0 0 5px $secondary-yellow;
+        }
+      }
+
+      &[type="submit"] {
+        width: 37%;
+        @include adaptive-value(padding-left, 10, 5);
+        @include adaptive-value(padding-right, 10, 5);
+        background: $secondary-yellow;
+        @include adaptive-value(font-size, 24, 12);
+        font-weight: 500;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 0 3px 3px 0;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $primary-yellow;
+        }
+
+        @media (max-width: 450px) {
+          flex: 1;
+        }
+
+        @media (max-width: 375px) {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

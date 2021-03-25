@@ -1,0 +1,134 @@
+.tabs {
+  display: flex;
+  padding: 3px 0 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $secondary-grey;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  &__item {
+    padding: 11px 0;
+    @include adaptive-value(padding-left, 20, 10);
+    @include adaptive-value(padding-right, 20, 10);
+    position: relative;
+    // border-bottom: 2px solid transparent;
+
+    &.active {
+      .tabs__link {
+        color: $primary-green;
+      }
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primary-green;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      transition: 0.3s;
+    }
+  }
+
+  &__link {
+    line-height: 19px;
+    font-weight: 500;
+    color: $primary-grey;
+    transition: 0.3s;
+
+    &:hover {
+      color: $primary-green;
+    }
+  }
+}
+
+.tabs-item {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.link-to-tab {
+  display: inline-flex;
+  align-items: flex-start;
+  color: $primary-blue;
+  line-height: 19px;
+  font-weight: 500;
+  transition: 0.3s;
+
+  &:hover {
+    color: $secondary-green;
+
+    span {
+      border-bottom-color: $secondary-green;
+    }
+
+    svg {
+      fill: $secondary-green;
+    }
+  }
+
+  span {
+    margin-right: 5px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba($primary-blue, 0.5);
+  }
+
+  svg {
+    width: 15px;
+    height: 10px;
+    object-fit: cover;
+    fill: $primary-blue;
+    transform: translateY(50%);
+    transition: 0.3s;
+  }
+}
+
+.description-tab {
+  @include adaptive-value(padding-top, 30, 15);
+  @include adaptive-value(padding-bottom, 30, 15);
+  font-family: "Nunito";
+  line-height: 24px;
+  font-weight: 600;
+  color: $primary-grey;
+}
+
+.characteristics-tab {
+  width: 100%;
+  @include adaptive-value(padding-top, 30, 15);
+  @include adaptive-value(padding-bottom, 30, 15);
+
+  .characteristics {
+    width: 100%;
+  }
+}
+
+.comments-tab {
+  @include adaptive-value(padding-top, 30, 15);
+  @include adaptive-value(padding-bottom, 30, 15);
+
+  .comments {
+    width: 100%;
+  }
+}

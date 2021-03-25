@@ -1,0 +1,81 @@
+.comments {
+  width: 48%;
+
+  @media (max-width: 851px) {
+    width: 100%;
+  }
+
+  &__list {
+    @include adaptive-value(margin-bottom, 40, 20);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid $secondary-grey;
+      @include adaptive-value(margin-bottom, 30, 15);
+
+      .comments__body {
+        @include adaptive-value(margin-bottom, 35, 20);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @include adaptive-value(margin-bottom, 38, 10);
+
+    .block-title {
+      margin-right: 10px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    @include adaptive-value(line-height, 32, 20);
+    margin-bottom: 10px;
+  }
+
+  &__author {
+    margin-right: 5px;
+    font-weight: 500;
+    color: $primary-blue;
+  }
+
+  &__date {
+    @include adaptive-value(margin-right, 20, 10);
+    @include adaptive-value(font-size, 14, 10);
+    color: $primary-grey;
+  }
+
+  &__body {
+    color: $primary-grey;
+  }
+
+  &__actions {
+    text-align: center;
+  }
+
+  &__btn {
+    display: inline-block;
+    @include adaptive-value(padding-top, 12, 8);
+    @include adaptive-value(padding-bottom, 12, 8);
+    @include adaptive-value(padding-left, 21, 14);
+    @include adaptive-value(padding-right, 21, 14);
+    border: 2px solid $primary-yellow;
+    border-radius: 10px 0 10px 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: $primary-grey;
+    font-weight: 500;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fff;
+      background: $primary-yellow;
+    }
+  }
+}

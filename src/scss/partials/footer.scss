@@ -1,0 +1,206 @@
+.footer {
+  display: block;
+  background-color: $dark-green;
+  @include adaptive-value(padding-top, 58, 30);
+  @include adaptive-value(padding-bottom, 35, 20);
+
+  .container {
+    background: transparent;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include adaptive-value(padding-bottom, 35, 20);
+    border-bottom: 1px solid $primary-grey;
+
+    @media (max-width: 851px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__column {
+    &:nth-child(1) {
+      width: 35%;
+      margin-right: 10px;
+
+      @media (max-width: 950px) {
+        width: 25%;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 35%;
+    }
+
+    &:last-child {
+    }
+
+    &.logos {
+      @media (max-width: 851px) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .logo {
+        @media (max-width: 851px) {
+          margin-right: 30px;
+          margin-bottom: 0;
+        }
+      }
+
+      .social__list {
+        @media (max-width: 851px) {
+          margin-bottom: 0;
+        }
+      }
+
+      .payments {
+        @media (max-width: 851px) {
+          display: flex;
+          align-items: center;
+        }
+
+        .nova-poshta {
+          @media (max-width: 851px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &.phones {
+      width: 16%;
+
+      @media (max-width: 950px) {
+        width: 21%;
+      }
+
+      @media (max-width: 851px) {
+        width: 31%;
+      }
+
+      @media (max-width: 425px) {
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .footer__column-title {
+        @media (max-width: 425px) {
+          text-align: center;
+        }
+      }
+
+      .footer__column-list {
+        @media (max-width: 425px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+      }
+
+      .footer__column-item {
+        &:not(:last-child) {
+          @media (max-width: 425px) {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .large-tel {
+        @media (max-width: 851px) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-group {
+      width: 35%;
+      display: flex;
+
+      .footer__column {
+        flex: 1;
+
+        &:first-child {
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          word-break: break-all;
+        }
+      }
+
+      @media (max-width: 851px) {
+        width: 62%;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 425px) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    &-title {
+      @include adaptive-value(font-size, 18, 14);
+      @include adaptive-value(line-height, 21, 16);
+      font-weight: 500;
+      color: #fff;
+      @include adaptive-value(margin-bottom, 18, 12);
+    }
+
+    &-link {
+      display: inline-block;
+      @include adaptive-value(font-size, 14, 12);
+      @include adaptive-value(line-height, 18, 14);
+      color: rgba(#fff, 0.5);
+      transition: color 0.3s;
+
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      &.large-tel {
+        @include adaptive-value(font-size, 24, 16);
+        @include adaptive-value(line-height, 28, 20);
+        margin-bottom: 12px;
+      }
+
+      &.medium-tel {
+        @include adaptive-value(font-size, 18, 12);
+        @include adaptive-value(line-height, 21, 15);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    @include adaptive-value(padding-top, 27, 15);
+    color: rgba(#fff, 0.5);
+    @include adaptive-value(font-size, 14, 12);
+    @include adaptive-value(line-height, 18, 14);
+
+    .development {
+      @include adaptive-value(margin-right, 80, 0);
+      color: rgba(#fff, 0.5);
+      transition: color 0.3s;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
