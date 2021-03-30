@@ -42,6 +42,7 @@
       &[type="tel"] {
         @include adaptive-value(padding, 18, 5);
         width: 64%;
+        background: #fff;
         color: $secondary-blue;
         border-radius: 3px 0 0 3px;
         transition: box-shadow 0.3s;

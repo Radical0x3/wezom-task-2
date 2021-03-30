@@ -217,6 +217,7 @@
 
     &-item {
       display: flex;
+      background: transparent;
       transition: 0.3s;
 
       svg {
@@ -232,7 +233,7 @@
     &-wrap {
       display: flex;
 
-      a {
+      button {
         width: 50%;
         padding: 0 10px;
         display: flex;
@@ -353,12 +354,17 @@
       padding: 0 25px 0 20px;
       font-size: 14px;
       line-height: 17px;
-      color: rgba($secondary-blue, 0.8);
+      color: $secondary-blue;
+      font-weight: 500;
       border: 2px solid $primary-yellow;
       border-radius: 0 0 20px 0;
 
       svg {
         margin-right: 12px;
+      }
+
+      span {
+        text-align: left;
       }
 
       &:hover {

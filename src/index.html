@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <title>Second Task</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,7 +27,6 @@
       crossorigin
     />
     <link rel="stylesheet" media="all" href="css/style.min.css" />
-    <title>Second Task</title>
   </head>
   <body id="home">
     <main class="main">
@@ -229,48 +229,40 @@
                     <span class="product__old-price">4 200 <span>₴</span></span>
                   </div>
                   <div class="product__actions">
-                    <a
-                      href="#"
+                    <button
                       title="В корзину"
-                      class="product__actions-item cart-btn"
-                    >
+                      class="product__actions-item cart-btn">
                       <span>В корзину</span>
                       <svg>
                         <use
                           xlink:href="img/icons/icons.svg#shopping-cart"
                         ></use>
                       </svg>
-                    </a>
+                    </button>
                     <div class="product__actions-wrap multiple-btns">
-                      <a
-                        href="#"
+                      <button
                         title="В сравнение"
-                        class="product__actions-item"
-                      >
+                        class="product__actions-item">
                         <svg>
                           <use xlink:href="img/icons/icons.svg#balance"></use>
                         </svg>
-                      </a>
-                      <a
-                        href="#"
+                      </button>
+                      <button
                         title="В любимое"
-                        class="product__actions-item"
-                      >
+                        class="product__actions-item">
                         <svg>
                           <use xlink:href="img/icons/icons.svg#like"></use>
                         </svg>
-                      </a>
+                      </button>
                     </div>
-                    <a
-                      href="#"
+                    <button
                       title="Купить в 1 клик"
-                      class="product__actions-item buy-btn"
-                    >
+                      class="product__actions-item buy-btn">
                       <svg>
                         <use xlink:href="img/icons/icons.svg#call"></use>
                       </svg>
                       <span>Купить в 1 клик</span>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div class="product__payment">
@@ -395,10 +387,10 @@
               </div>
               <div id="comments" class="comments">
                 <header class="comments__header">
-                  <h2 class="block-title">
+                  <h3 class="block-title">
                     Отзывы покупателей
                     <span class="block-title_medium">32</span>
-                  </h2>
+                  </h3>
                   <a href="#tab-4" class="link-to-tab">
                     <span>Все отзывы</span>
                     <svg>
@@ -450,7 +442,7 @@
                   </li>
                 </ul>
                 <div class="comments__actions">
-                  <a href="#" class="comments__btn">Показать ещё</a>
+                  <button class="comments__btn">Показать ещё</button>
                 </div>
               </div>
             </div>
@@ -641,7 +633,7 @@
                 </li>
               </ul>
               <div class="comments__actions">
-                <a href="#" class="comments__btn">Показать ещё</a>
+                <button class="comments__btn">Показать ещё</button>
               </div>
             </div>
           </div>
@@ -791,7 +783,11 @@
               </div>
             </li>
             <li class="goods__item">
-              <div class="goods__top"></div>
+              <div class="goods__top">
+                <svg class="goods__icon">
+                  <use xlink:href="img/icons/icons.svg#like"></use>
+                </svg>
+              </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-1.webp" type="image/webp" />
@@ -934,7 +930,7 @@
               placeholder="+38 (0xx) xx - xx - xxx"
               required
             />
-            <input class="subscribe__submit" type="submit" />
+            <input class="subscribe__submit" type="submit" value="Отправить"/>
           </form>
         </section>
       </div>

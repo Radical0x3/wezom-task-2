@@ -1,19 +1,23 @@
 $(document).ready(function () {
   // Switch between tabs
-  $(".tabs__link").on("click", function () {
-    let target = $(this).attr("href").slice(1);
-    $(".tabs-item.active").removeClass("active");
-    $(`#${target}`).addClass("active");
+  $(".tabs__link", ".tabs").on("click", function () {
+    let target = $(this).attr("href");
 
-    $(".tabs__item.active").removeClass("active");
-    $(this).parent().addClass("active");
+    if (!$(this).parents(".tabs__item").hasClass("active")) {
+      $(".tabs-item.active").removeClass("active");
+      $(`${target}`).addClass("active");
+
+      $(".tabs__item.active").removeClass("active");
+      $(this).parent().addClass("active");
+    }
+
+    scrolltoElement(this);
   });
 
   // Initialise vertical slider
   $(".product__slider").slick({
     slidesToShow: 4,
     vertical: true,
-    verticalSwiping: true,
     infinite: false,
     accessibility: false,
     asNavFor: ".product__big-slider",
@@ -48,16 +52,14 @@ $(document).ready(function () {
   });
 
   // Load comments from JSON to About Tab
-  $("#tab-1 .comments__btn").on("click", function (e) {
-    e.preventDefault();
+  $("#tab-1 .comments__btn").on("click", function () {
     let target = $("#tab-1 .comments__list");
     let commentsCount = $("#tab-1 .comments__item").length;
     loadComments(target, commentsCount);
   });
 
   // Load comments from JSON to Comments Tab
-  $("#tab-4 .comments__btn").on("click", function (e) {
-    e.preventDefault();
+  $("#tab-4 .comments__btn").on("click", function () {
     let target = $("#tab-4 .comments__list");
     let commentsCount = $("#tab-4 .comments__item").length;
     loadComments(target, commentsCount);
@@ -90,37 +92,27 @@ $(document).ready(function () {
 
   // Go to tab
   $(".link-to-tab").on("click", function () {
-    let target = $(this).attr("href").slice(1);
+    let target = $(this).attr("href");
     let id = target.slice(-1);
     $(".tabs-item.active").removeClass("active");
     $(".tabs__item.active").removeClass("active");
     $(".tabs__item")
       .eq(id - 1)
       .addClass("active");
-    $(`#${target}`).addClass("active");
+    $(`${target}`).addClass("active");
+    scrolltoElement(this);
   });
 
   $(".goods__icon").on("click", function () {
     $(this).toggleClass("active");
   });
 
-  // Scroll to top
-  $("a").on("click", function (e) {
-    let href = $(this).attr("href");
+  $(".button-up").on("click", function () {
+    scrolltoElement(this);
+  });
 
-    if (href.startsWith("#") && href !== "#" && href !== "##") {
-      $("html, body").animate(
-        {
-          scrollTop: $(href).offset().top - 100,
-        },
-        {
-          duration: 600,
-          easing: "linear",
-        }
-      );
-
-      return false;
-    }
+  $(".rating__votes").on("click", function () {
+    scrolltoElement(this);
   });
 
   $(window).scroll(function () {
@@ -138,6 +130,20 @@ $(document).ready(function () {
     }
   }
 });
+
+function scrolltoElement(target) {
+  let href = $(target).attr("href");
+
+  $("html, body").animate(
+    {
+      scrollTop: $(href).offset().top - 100,
+    },
+    {
+      duration: 600,
+      easing: "linear",
+    }
+  );
+}
 
 // Initialise third slider
 function checkGoodsSlider() {
@@ -212,6 +218,7 @@ function loadComments(target, commentsCount) {
 
   xhr.onload = function () {
     let data = JSON.parse(xhr.responseText);
+    let result = "";
 
     for (let i = 0; i < 3; i++) {
       if (commentsCount + i >= data.length) {
@@ -236,10 +243,13 @@ function loadComments(target, commentsCount) {
         <p class="comments__body">${item.comment}</p>
       </li>`;
 
-      target.append(object);
+      result += object;
+
       if (commentsCount + i + 1 === data.length) {
-        $(target).next().find(".comments__btn").remove();
+        $(target).parent().find(".comments__btn").remove();
       }
     }
+
+    target.append(result);
   };
 }

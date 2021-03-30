@@ -62,6 +62,12 @@
       box-shadow: 0px 0px 10px $secondary-green;
     }
 
+    @media (max-width: 476px) {
+      display: block !important; 
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
     
   }
 
@@ -246,6 +252,8 @@
     &-slide {
       @include adaptive-value(margin, 8, 4);
       height: 100%;
+
+      
     }
 
     &-arrow {
