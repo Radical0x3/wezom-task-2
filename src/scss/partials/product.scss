@@ -182,10 +182,6 @@
     font-weight: 700;
     color: $primary-red;
     @include adaptive-value(margin-right, 25, 15);
-
-    span {
-      font-weight: 400;
-    }
   }
 
   &__old-price {
@@ -206,6 +202,10 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+    }
+
+    span {
+      font-weight: 500;
     }
   }
 
@@ -445,7 +445,7 @@
       padding: 5px 0;
       margin-bottom: 10px;
       @include adaptive-value(margin-bottom, 10, 5);
-      font-family: "Nunito";
+      font-family: "Nunito", sans-serif;
       font-weight: 700;
       line-height: 19px;
       color: $secondary-blue;
@@ -489,7 +489,7 @@
 
     &-body {
       display: none;
-      font-family: "Nunito";
+      font-family: "Nunito", sans-serif;
       @include adaptive-value(font-size, 14, 12);
       @include adaptive-value(line-height, 19, 16);
       color: $secondary-blue;

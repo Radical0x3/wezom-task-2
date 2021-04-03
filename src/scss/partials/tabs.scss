@@ -108,7 +108,7 @@
 .description-tab {
   @include adaptive-value(padding-top, 30, 15);
   @include adaptive-value(padding-bottom, 30, 15);
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   line-height: 24px;
   font-weight: 600;
   color: $primary-grey;

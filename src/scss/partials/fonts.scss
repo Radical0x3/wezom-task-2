@@ -1,7 +1,15 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold.woff2");
-  font-weight: 700;
+  src: url("../fonts/Roboto-Light.woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -16,16 +24,16 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.woff2");
-  font-weight: 400;
+  src: url("../fonts/Roboto-Bold.woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Bold.woff2");
-  font-weight: 700;
+  src: url("../fonts/Nunito-Medium.woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -40,8 +48,8 @@
 
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Medium.woff2");
-  font-weight: 500;
+  src: url("../fonts/Nunito-Bold.woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

@@ -1,6 +1,6 @@
+@import "partials/fonts";
 @import "partials/general/_vars";
 @import "partials/general/nullstyle";
-@import "partials/fonts";
 @import "partials/sliders";
 @import "partials/tabs";
 @import "partials/product";
@@ -17,7 +17,7 @@ body {
   justify-content: space-between;
   min-width: 320px;
 
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   @include adaptive-value(font-size, 16, 12);
   line-height: 19px;
 }
@@ -37,6 +37,10 @@ body {
 
 .votes-count {
   color: $primary-green;
+}
+
+.currency {
+  font-weight: 400;
 }
 
 .button-up {

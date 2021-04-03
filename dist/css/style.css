@@ -1,5 +1,61 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-SemiBold.woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*Обнуление*/
 
 * {
@@ -94,54 +150,6 @@ h6 {
 }
 
 /*--------------------*/
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold.woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Medium.woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-Bold.woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-SemiBold.woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("../fonts/Nunito-Medium.woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 
 .product__slider {
   max-width: 120px;
@@ -404,7 +412,7 @@ h6 {
 .description-tab {
   padding-top: 30px;
   padding-bottom: 30px;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   line-height: 24px;
   font-weight: 600;
   color: #5c6d7d;
@@ -596,10 +604,6 @@ h6 {
   margin-right: 25px;
 }
 
-.product__new-price span {
-  font-weight: 400;
-}
-
 .product__old-price {
   display: inline-block;
   line-height: 19px;
@@ -624,6 +628,10 @@ h6 {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.product__old-price span {
+  font-weight: 500;
 }
 
 .product__actions {
@@ -795,7 +803,7 @@ h6 {
   padding: 5px 0;
   margin-bottom: 10px;
   margin-bottom: 10px;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   line-height: 19px;
   color: #5c6d7d;
@@ -849,7 +857,7 @@ h6 {
 
 .product__payment-body {
   display: none;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 14px;
   line-height: 19px;
   color: #5c6d7d;
@@ -904,7 +912,7 @@ h6 {
 }
 
 .rating__votes {
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
@@ -1284,10 +1292,6 @@ h6 {
   color: #33485d;
 }
 
-.goods__currency {
-  font-weight: 300;
-}
-
 .goods__stock {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1599,7 +1603,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-width: 320px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 19px;
 }
@@ -1620,6 +1624,10 @@ body {
 
 .votes-count {
   color: #47b39c;
+}
+
+.currency {
+  font-weight: 400;
 }
 
 .button-up {
