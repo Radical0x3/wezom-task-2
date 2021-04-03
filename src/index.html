@@ -32,26 +32,26 @@
     <main class="main">
       <div class="container">
         <div class="product">
-          <ul class="tabs">
-            <li class="tabs__item active">
-              <a href="#tab-1" class="tabs__link">Всё о товаре</a>
+          <ul class="tabs js-tabs">
+            <li class="tabs__item js-tabs-item active">
+              <a href="#tab-1" class="tabs__link js-tabs-link">Всё о товаре</a>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item js-tabs-item">
               <a href="#tab-2" class="tabs__link">Описание</a>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item js-tabs-item">
               <a href="#tab-3" class="tabs__link">Характеристики</a>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item js-tabs-item">
               <a href="#tab-4" class="tabs__link"
                 >Отзывы <span class="votes-count">32</span></a
               >
             </li>
           </ul>
-          <div id="tab-1" class="product__overview tabs-item active">
+          <div id="tab-1" class="product__overview tabs-item js-tab active">
             <div class="product__about">
               <div class="product__images">
-                <div class="product__slider">
+                <div class="product__slider js-slider-preview">
                   <div class="product__slider-item">
                     <picture>
                       <source
@@ -122,7 +122,7 @@
                     </picture>
                   </div>
                 </div>
-                <div class="product__big-slider">
+                <div class="product__big-slider js-big-slider">
                   <div class="product__big-slider-item">
                     <picture>
                       <source
@@ -204,13 +204,35 @@
                   </div>
                   <div class="product__rating">
                     <ul class="rating__list" data-total-value="4">
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
                     </ul>
-                    <a href="#comments" class="rating__votes">32</a>
+                    <a href="#comments" class="rating__votes js-scroll-to"
+                      >32</a
+                    >
                   </div>
                   <span class="product__vendor-code"
                     >Артикул: <span>100500</span></span
@@ -231,7 +253,8 @@
                   <div class="product__actions">
                     <button
                       title="В корзину"
-                      class="product__actions-item cart-btn">
+                      class="product__actions-item cart-btn"
+                    >
                       <span>В корзину</span>
                       <svg>
                         <use
@@ -240,16 +263,12 @@
                       </svg>
                     </button>
                     <div class="product__actions-wrap multiple-btns">
-                      <button
-                        title="В сравнение"
-                        class="product__actions-item">
+                      <button title="В сравнение" class="product__actions-item">
                         <svg>
                           <use xlink:href="img/icons/icons.svg#balance"></use>
                         </svg>
                       </button>
-                      <button
-                        title="В любимое"
-                        class="product__actions-item">
+                      <button title="В любимое" class="product__actions-item">
                         <svg>
                           <use xlink:href="img/icons/icons.svg#like"></use>
                         </svg>
@@ -257,7 +276,8 @@
                     </div>
                     <button
                       title="Купить в 1 клик"
-                      class="product__actions-item buy-btn">
+                      class="product__actions-item buy-btn"
+                    >
                       <svg>
                         <use xlink:href="img/icons/icons.svg#call"></use>
                       </svg>
@@ -266,9 +286,11 @@
                   </div>
                 </div>
                 <div class="product__payment">
-                  <ul class="product__payment-list">
+                  <ul class="product__payment-list js-accordion">
                     <li class="product__payment-item">
-                      <header class="product__payment-header">
+                      <header
+                        class="product__payment-header js-accordion-header"
+                      >
                         <div class="product__payment-header-left">
                           <svg>
                             <use
@@ -283,7 +305,7 @@
                           ></use>
                         </svg>
                       </header>
-                      <div class="product__payment-body">
+                      <div class="product__payment-body js-accordion-body">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Amet eum ipsam neque aut est expedita obcaecati numquam,
                         fuga earum pariatur voluptatibus vel vero distinctio
@@ -295,7 +317,9 @@
                       </div>
                     </li>
                     <li class="product__payment-item">
-                      <header class="product__payment-header">
+                      <header
+                        class="product__payment-header js-accordion-header"
+                      >
                         <div class="product__payment-header-left">
                           <svg>
                             <use
@@ -310,7 +334,7 @@
                           ></use>
                         </svg>
                       </header>
-                      <div class="product__payment-body">
+                      <div class="product__payment-body js-accordion-body">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Amet eum ipsam neque aut est expedita obcaecati numquam,
                         fuga earum pariatur voluptatibus vel vero distinctio
@@ -322,7 +346,9 @@
                       </div>
                     </li>
                     <li class="product__payment-item">
-                      <header class="product__payment-header">
+                      <header
+                        class="product__payment-header js-accordion-header"
+                      >
                         <div class="product__payment-header-left">
                           <svg>
                             <use xlink:href="img/icons/icons.svg#payment"></use>
@@ -335,7 +361,7 @@
                           ></use>
                         </svg>
                       </header>
-                      <div class="product__payment-body">
+                      <div class="product__payment-body js-accordion-body">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Amet eum ipsam neque aut est expedita obcaecati numquam,
                         fuga earum pariatur voluptatibus vel vero distinctio
@@ -378,7 +404,7 @@
                     <span class="characteristics__item-value">TurboParts</span>
                   </li>
                 </ul>
-                <a href="#tab-3" class="link-to-tab">
+                <a href="#tab-3" class="link-to-tab js-tab-link">
                   <span>Все характеристики</span>
                   <svg>
                     <use xlink:href="img/icons/icons.svg#arrow-right"></use>
@@ -391,7 +417,7 @@
                     Отзывы покупателей
                     <span class="block-title_medium">32</span>
                   </h3>
-                  <a href="#tab-4" class="link-to-tab">
+                  <a href="#tab-4" class="link-to-tab js-tab-link">
                     <span>Все отзывы</span>
                     <svg>
                       <use xlink:href="img/icons/icons.svg#arrow-right"></use>
@@ -404,11 +430,31 @@
                       <span class="comments__author">Плахова Карина</span>
                       <span class="comments__date">/ 21 мая 2020</span>
                       <ul class="rating__list" data-total-value="4">
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
                       </ul>
                     </header>
                     <p class="comments__body">
@@ -426,11 +472,31 @@
                       <span class="comments__author">Рогозин Тимур</span>
                       <span class="comments__date">/ 17 мая 2020</span>
                       <ul class="rating__list" data-total-value="2">
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
-                        <li class="rating__item">&#9733;</li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
+                        <li class="rating__item">
+                          <svg class="rating__icon">
+                            <use xlink:href="img/icons/icons.svg#star"></use>
+                          </svg>
+                        </li>
                       </ul>
                     </header>
                     <p class="comments__body">
@@ -442,12 +508,14 @@
                   </li>
                 </ul>
                 <div class="comments__actions">
-                  <button class="comments__btn">Показать ещё</button>
+                  <button class="comments__btn js-load-comments">
+                    Показать ещё
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div id="tab-2" class="description-tab tabs-item">
+          <div id="tab-2" class="description-tab tabs-item js-tab">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
             impedit ipsam id in tempore, natus veniam autem beatae modi nihil
             unde corrupti officiis hic nulla harum ipsum ratione atque
@@ -484,7 +552,7 @@
             dignissimos commodi et quasi assumenda a deleniti. Cumque doloremque
             necessitatibus et iure dolorum!
           </div>
-          <div id="tab-3" class="characteristics-tab tabs-item">
+          <div id="tab-3" class="characteristics-tab tabs-item js-tab">
             <div class="characteristics">
               <h2 class="block-title">
                 Характеристики <span>Картридж турбины Mercedes E-klasse</span>
@@ -530,14 +598,12 @@
                     <span class="characteristics__item-title">Бренд</span>
                     <div class="characteristics__item-line"></div>
                   </div>
-                  <span class="characteristics__item-value"
-                    >TurboParts4</span
-                  >
+                  <span class="characteristics__item-value">TurboParts4</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div id="tab-4" class="comments-tab tabs-item">
+          <div id="tab-4" class="comments-tab tabs-item js-tab">
             <div class="comments">
               <header class="comments__header">
                 <h2 class="block-title">
@@ -551,11 +617,31 @@
                     <span class="comments__author">Плахова Карина</span>
                     <span class="comments__date">/ 21 мая 2020</span>
                     <ul class="rating__list" data-total-value="4">
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
                     </ul>
                   </header>
                   <p class="comments__body">
@@ -573,11 +659,31 @@
                     <span class="comments__author">Рогозин Тимур</span>
                     <span class="comments__date">/ 17 мая 2020</span>
                     <ul class="rating__list" data-total-value="2">
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
                     </ul>
                   </header>
                   <p class="comments__body">
@@ -592,19 +698,39 @@
                     <span class="comments__author">Плахова Марина</span>
                     <span class="comments__date">/ 21 мая 2020</span>
                     <ul class="rating__list" data-total-value="4">
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
                     </ul>
                   </header>
                   <p class="comments__body">
-                    Покупка этой турбины была спонтанной и незапланированной.
-                    В течении часа прочитала отзывы и остановилась на этой
+                    Покупка этой турбины была спонтанной и незапланированной. В
+                    течении часа прочитала отзывы и остановилась на этой
                     модельке. Изначально знала, что пластины не сьемные, но
-                    плюсов было больше. Спасибо за молниеносную отправку! 2
-                    дня с момента заказа и единственный нюанс-все таки сьемные
+                    плюсов было больше. Спасибо за молниеносную отправку! 2 дня
+                    с момента заказа и единственный нюанс-все таки сьемные
                     пластины удобнее, наверное. Но по советам более опытных я
                     ставила пергамент, но мыть все равно сложновато.
                   </p>
@@ -614,60 +740,99 @@
                     <span class="comments__author">Плахова Алина</span>
                     <span class="comments__date">/ 20 мая 2020</span>
                     <ul class="rating__list" data-total-value="5">
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
-                      <li class="rating__item">&#9733;</li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
+                      <li class="rating__item">
+                        <svg class="rating__icon">
+                          <use xlink:href="img/icons/icons.svg#star"></use>
+                        </svg>
+                      </li>
                     </ul>
                   </header>
                   <p class="comments__body">
-                    Покупка этой турбины была спонтанной и незапланированной.
-                    В течении часа прочитала отзывы и остановилась на этой
+                    Покупка этой турбины была спонтанной и незапланированной. В
+                    течении часа прочитала отзывы и остановилась на этой
                     модельке. Изначально знала, что пластины не сьемные, но
-                    плюсов было больше. Спасибо за молниеносную отправку! 2
-                    дня с момента заказа и единственный нюанс-все таки сьемные
+                    плюсов было больше. Спасибо за молниеносную отправку! 2 дня
+                    с момента заказа и единственный нюанс-все таки сьемные
                     пластины удобнее, наверное. Но по советам более опытных я
                     ставила пергамент, но мыть все равно сложновато.
                   </p>
                 </li>
               </ul>
               <div class="comments__actions">
-                <button class="comments__btn">Показать ещё</button>
+                <button class="comments__btn js-load-comments">
+                  Показать ещё
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <section class="goods">
+        <section class="goods js-goods">
           <h1 class="section-title">Тестовые товары</h1>
           <ul
-            class="goods__list"
+            class="goods__list js-goods-slider"
             data-slick='{"slidesToShow": 5, "slidesToScroll": 2}'
           >
-            <li class="goods__item">
+            <li class="goods__item js-goods-item">
               <div class="goods__top">
                 <span class="goods__tag goods__tag_blue">top</span>
-                <svg class="goods__icon">
+                <svg class="goods__icon js-favourite">
                   <use xlink:href="img/icons/icons.svg#like"></use>
                 </svg>
               </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-1.webp" type="image/webp" />
-                  <img
-                    src="img/slider-1.png"
-                    alt="goods image"
-                  />
+                  <img src="img/slider-1.png" alt="goods image" />
                 </picture>
               </a>
               <div class="goods__body">
                 <div class="goods__rating">
                   <ul class="rating__list" data-total-value="4">
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
                   </ul>
                   <a href="#" class="goods__rating-votes">3</a>
                 </div>
@@ -692,30 +857,47 @@
                 </div>
               </div>
             </li>
-            <li class="goods__item">
+            <li class="goods__item js-goods-item">
               <div class="goods__top">
                 <span class="goods__tag goods__tag_purple">new</span>
-                <svg class="goods__icon">
+                <svg class="goods__icon js-favourite">
                   <use xlink:href="img/icons/icons.svg#like"></use>
                 </svg>
               </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-1.webp" type="image/webp" />
-                  <img
-                    src="img/slider-1.png"
-                    alt="goods image"
-                  />
+                  <img src="img/slider-1.png" alt="goods image" />
                 </picture>
               </a>
               <div class="goods__body">
                 <div class="goods__rating">
                   <ul class="rating__list" data-total-value="4">
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
                   </ul>
                   <a href="#" class="goods__rating-votes">44</a>
                 </div>
@@ -737,30 +919,47 @@
                 </div>
               </div>
             </li>
-            <li class="goods__item">
+            <li class="goods__item js-goods-item">
               <div class="goods__top">
                 <span class="goods__tag goods__tag_blue">top</span>
-                <svg class="goods__icon">
+                <svg class="goods__icon js-favourite">
                   <use xlink:href="img/icons/icons.svg#like"></use>
                 </svg>
               </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-2.webp" type="image/webp" />
-                  <img
-                    src="img/slider-2.png"
-                    alt="goods image"
-                  />
+                  <img src="img/slider-2.png" alt="goods image" />
                 </picture>
               </a>
               <div class="goods__body">
                 <div class="goods__rating">
                   <ul class="rating__list" data-total-value="4">
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
                   </ul>
                   <a href="#" class="goods__rating-votes">11</a>
                 </div>
@@ -782,29 +981,46 @@
                 </div>
               </div>
             </li>
-            <li class="goods__item">
+            <li class="goods__item js-goods-item">
               <div class="goods__top">
-                <svg class="goods__icon">
+                <svg class="goods__icon js-favourite">
                   <use xlink:href="img/icons/icons.svg#like"></use>
                 </svg>
               </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-1.webp" type="image/webp" />
-                  <img
-                    src="img/slider-1.png"
-                    alt="goods image"
-                  />
+                  <img src="img/slider-1.png" alt="goods image" />
                 </picture>
               </a>
               <div class="goods__body">
                 <div class="goods__rating">
                   <ul class="rating__list" data-total-value="4">
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
                   </ul>
                   <a href="#" class="goods__rating-votes">76</a>
                 </div>
@@ -826,30 +1042,47 @@
                 </div>
               </div>
             </li>
-            <li class="goods__item">
+            <li class="goods__item js-goods-item">
               <div class="goods__top">
                 <span class="goods__tag goods__tag_purple">new</span>
-                <svg class="goods__icon">
+                <svg class="goods__icon js-favourite">
                   <use xlink:href="img/icons/icons.svg#like"></use>
                 </svg>
               </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-1.webp" type="image/webp" />
-                  <img
-                    src="img/slider-1.png"
-                    alt="goods image"
-                  />
+                  <img src="img/slider-1.png" alt="goods image" />
                 </picture>
               </a>
               <div class="goods__body">
                 <div class="goods__rating">
                   <ul class="rating__list" data-total-value="4">
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
                   </ul>
                   <a href="#" class="goods__rating-votes">2</a>
                 </div>
@@ -871,30 +1104,47 @@
                 </div>
               </div>
             </li>
-            <li class="goods__item">
+            <li class="goods__item js-goods-item">
               <div class="goods__top">
                 <span class="goods__tag goods__tag_blue">top</span>
-                <svg class="goods__icon">
+                <svg class="goods__icon js-favourite">
                   <use xlink:href="img/icons/icons.svg#like"></use>
                 </svg>
               </div>
               <a href="#" class="goods__link">
                 <picture class="goods__image">
                   <source srcset="img/slider-2.webp" type="image/webp" />
-                  <img
-                    src="img/slider-2.png"
-                    alt="goods image"
-                  />
+                  <img src="img/slider-2.png" alt="goods image" />
                 </picture>
               </a>
               <div class="goods__body">
                 <div class="goods__rating">
                   <ul class="rating__list" data-total-value="4">
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
-                    <li class="rating__item">&#9733;</li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
+                    <li class="rating__item">
+                      <svg class="rating__icon">
+                        <use xlink:href="img/icons/icons.svg#star"></use>
+                      </svg>
+                    </li>
                   </ul>
                   <a href="#" class="goods__rating-votes">11</a>
                 </div>
@@ -924,13 +1174,13 @@
           </h3>
           <form action="#" class="subscribe__form">
             <input
-              class="subscribe__tel"
+              class="subscribe__tel js-tel-mask"
               type="tel"
               name="tel"
               placeholder="+38 (0xx) xx - xx - xxx"
               required
             />
-            <input class="subscribe__submit" type="submit" value="Отправить"/>
+            <input class="subscribe__submit" type="submit" value="Отправить" />
           </form>
         </section>
       </div>
@@ -990,7 +1240,7 @@
                 </a>
               </li>
             </ul>
-            <div class="payments">
+            <div class="payments js-footer-icons">
               <a
                 href="https://novaposhta.ua/"
                 class="nova-poshta"
@@ -1065,10 +1315,14 @@
                   >
                 </li>
                 <li class="footer__column-item">
-                  <a href="#" class="footer__column-link">Кабели и переходники</a>
+                  <a href="#" class="footer__column-link"
+                    >Кабели и переходники</a
+                  >
                 </li>
                 <li class="footer__column-item">
-                  <a href="#" class="footer__column-link">Сумки для ноутбуков</a>
+                  <a href="#" class="footer__column-link"
+                    >Сумки для ноутбуков</a
+                  >
                 </li>
                 <li class="footer__column-item">
                   <a href="#" class="footer__column-link">Автотовары</a>
@@ -1085,22 +1339,21 @@
               <h4 class="footer__column-title">Группа 2</h4>
               <ul class="footer__column-list">
                 <li class="footer__column-item">
-                  <a href="#" class="footer__column-link">Политика конфиденциальности</a>
+                  <a href="#" class="footer__column-link"
+                    >Политика конфиденциальности</a
+                  >
                 </li>
                 <li class="footer__column-item">
                   <a href="#" class="footer__column-link">Доставка и оплата</a>
                 </li>
                 <li class="footer__column-item">
-                  <a href="#" class="footer__column-link"
-                    >Способы оплаты</a
-                  >
+                  <a href="#" class="footer__column-link">Способы оплаты</a>
                 </li>
                 <li class="footer__column-item">
                   <a href="#" class="footer__column-link">Гарантия</a>
                 </li>
                 <li class="footer__column-item">
                   <a href="#" class="footer__column-link">Контакты</a>
-                </li>
                 </li>
               </ul>
             </div>
@@ -1109,31 +1362,44 @@
             <h4 class="footer__column-title">Горячая линия</h4>
             <ul class="footer__column-list">
               <li class="footer__column-item">
-                <a href="tel:0800000000" class="footer__column-link large-tel">0 800 000 000</a>
+                <a href="tel:0800000000" class="footer__column-link large-tel"
+                  >0 800 000 000</a
+                >
               </li>
               <li class="footer__column-item">
-                <a href="tel:+380680000000" class="footer__column-link medium-tel"
+                <a
+                  href="tel:+380680000000"
+                  class="footer__column-link medium-tel"
                   >+38 068 000 00 00</a
                 >
               </li>
               <li class="footer__column-item">
-                <a href="tel:+380990000000" class="footer__column-link medium-tel">+38 099 000 00 00</a>
+                <a
+                  href="tel:+380990000000"
+                  class="footer__column-link medium-tel"
+                  >+38 099 000 00 00</a
+                >
               </li>
               <li class="footer__column-item">
-                <a href="tel:+380960000000" class="footer__column-link medium-tel" >+38 096 000 00 00</a>
-              </li>
+                <a
+                  href="tel:+380960000000"
+                  class="footer__column-link medium-tel"
+                  >+38 096 000 00 00</a
+                >
               </li>
             </ul>
           </div>
         </div>
         <div class="footer__bottom">
           <span class="copyright">2021 © Wezom Practice</span>
-          <a href="https://wezom.com.ua/" class="development" target="_blank">Разработка \\ Wezom</a>
+          <a href="https://wezom.com.ua/" class="development" target="_blank"
+            >Разработка \\ Wezom</a
+          >
         </div>
       </div>
     </footer>
 
-    <a href="#home" class="button-up">
+    <a href="#home" class="button-up js-scroll-to">
       <div class="arrow arrow-up"></div>
     </a>
 

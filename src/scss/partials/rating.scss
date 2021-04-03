@@ -11,22 +11,28 @@
     &[data-total-value="3"] .rating__item:nth-child(n + 3),
     &[data-total-value="4"] .rating__item:nth-child(n + 2),
     &[data-total-value="5"] .rating__item:nth-child(n + 1) {
-      color: $secondary-yellow;
+      .rating__icon {
+        opacity: 1;
+      }
     }
   }
 
   &__item {
-    @include adaptive-value(font-size, 18, 14);
-    color: rgba($secondary-yellow, 0.5);
-    transition: color 0.2s;
-
     &:not(:first-child) {
-      margin-right: 2px;
+      @include adaptive-value(margin-right, 5, 2);
     }
 
     &:first-child {
       margin-right: 8px;
     }
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: opacity 0.3s;
   }
 
   &__votes {

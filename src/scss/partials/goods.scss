@@ -63,12 +63,10 @@
     }
 
     @media (max-width: 476px) {
-      display: block !important; 
+      display: block !important;
       max-width: 260px;
       margin: 0 auto;
     }
-
-    
   }
 
   &__top {
@@ -252,8 +250,6 @@
     &-slide {
       @include adaptive-value(margin, 8, 4);
       height: 100%;
-
-      
     }
 
     &-arrow {

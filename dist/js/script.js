@@ -1,17 +1,21 @@
 $(document).ready(function () {
   // Switch between tabs
-  $(".tabs__link", ".tabs").on("click", function () {
-    let target = $(this).attr("href");
+  $(".js-tabs").on("click", function (event) {
+    const currentNode = event.target.closest("a");
+    const targetNode = $(currentNode).attr("href");
+    const parentNode = $(currentNode).parents(".js-tabs-item");
 
-    if (!$(this).parents(".tabs__item").hasClass("active")) {
-      $(".tabs-item.active").removeClass("active");
-      $(`${target}`).addClass("active");
+    if (!currentNode) return;
 
-      $(".tabs__item.active").removeClass("active");
-      $(this).parent().addClass("active");
+    if (!$(parentNode).hasClass("active")) {
+      $(".js-tab").removeClass("active");
+      $(`${targetNode}`).addClass("active");
+
+      $(".js-tabs-item").removeClass("active");
+      $(parentNode).addClass("active");
     }
 
-    scrolltoElement(this);
+    scrolltoElement(currentNode);
   });
 
   // Initialise vertical slider
@@ -52,66 +56,71 @@ $(document).ready(function () {
   });
 
   // Load comments from JSON to About Tab
-  $("#tab-1 .comments__btn").on("click", function () {
-    let target = $("#tab-1 .comments__list");
-    let commentsCount = $("#tab-1 .comments__item").length;
-    loadComments(target, commentsCount);
+  $(".js-load-comments", "#tab-1").on("click", function () {
+    const context = $("#tab-1");
+
+    loadComments(context);
   });
 
   // Load comments from JSON to Comments Tab
-  $("#tab-4 .comments__btn").on("click", function () {
-    let target = $("#tab-4 .comments__list");
-    let commentsCount = $("#tab-4 .comments__item").length;
-    loadComments(target, commentsCount);
+  $(".js-load-comments", "#tab-4").on("click", function () {
+    const context = $("#tab-4");
+
+    loadComments(context);
   });
 
   // Set input mask for telephone number
-  $(".subscribe__tel").mask("+38 (099) 99 - 99 - 999");
+  $(".js-tel-mask").mask("+38 (099) 99 - 99 - 999");
 
   // Change active slide of the big slider by clicking on the slide
   // of the small (vertical) slider
-  $(".product__slider .slick-slide").on("click", function () {
+  $(".js-slider-preview .slick-slide").on("click", function () {
     let id = $(this).attr("data-slick-index");
-    $(".product__big-slider").slick("slickGoTo", id);
+
+    $(".js-big-slider").slick("slickGoTo", id);
   });
 
   // Accordion
-  $(".product__payment-header").on("click", function () {
-    let target = $(this).next(".product__payment-body");
+  $(".js-accordion").on("click", function (event) {
+    const currentNode = event.target.closest("header");
 
-    if (target.is(":visible")) {
-      $(this).removeClass("active");
-      target.slideUp();
+    if (!currentNode) return;
+
+    const targetNode = $(currentNode).siblings(".js-accordion-body");
+
+    if (targetNode.is(":visible")) {
+      $(currentNode).removeClass("active");
+      targetNode.slideUp();
     } else {
-      $(".product__payment-header.active").removeClass("active");
-      $(".product__payment-body").slideUp();
-      $(this).addClass("active");
-      target.slideDown();
+      $(".js-accordion-header.active").removeClass("active");
+      $(".js-accordion-body").slideUp();
+      $(currentNode).addClass("active");
+      targetNode.slideDown();
     }
   });
 
   // Go to tab
-  $(".link-to-tab").on("click", function () {
+  $(".js-tab-link").on("click", function () {
     let target = $(this).attr("href");
     let id = target.slice(-1);
-    $(".tabs-item.active").removeClass("active");
-    $(".tabs__item.active").removeClass("active");
-    $(".tabs__item")
+    $(".js-tab.active").removeClass("active");
+    $(".js-tabs-item.active").removeClass("active");
+    $(".js-tabs-item")
       .eq(id - 1)
       .addClass("active");
     $(`${target}`).addClass("active");
     scrolltoElement(this);
   });
 
-  $(".goods__icon").on("click", function () {
-    $(this).toggleClass("active");
+  $(".js-goods").on("click", function (event) {
+    const target = event.target.closest("svg");
+
+    if (!target) return;
+
+    $(target).toggleClass("active");
   });
 
-  $(".button-up").on("click", function () {
-    scrolltoElement(this);
-  });
-
-  $(".rating__votes").on("click", function () {
+  $(".js-scroll-to").on("click", function () {
     scrolltoElement(this);
   });
 
@@ -120,9 +129,12 @@ $(document).ready(function () {
   });
   toggleBtnUp();
 
-  // Toggle button for scrolling up
+  // Toggle button for scrolling to top
   function toggleBtnUp() {
-    let btnUp = $(".button-up");
+    const btnUp = $(".button-up");
+
+    if (!btnUp) return;
+
     if ($(window).scrollTop() > 0) {
       btnUp.addClass("show");
     } else {
@@ -131,8 +143,9 @@ $(document).ready(function () {
   }
 });
 
+// Smooth scroll to element
 function scrolltoElement(target) {
-  let href = $(target).attr("href");
+  const href = $(target).attr("href");
 
   $("html, body").animate(
     {
@@ -147,12 +160,16 @@ function scrolltoElement(target) {
 
 // Initialise third slider
 function checkGoodsSlider() {
-  const data = $(".goods__list").attr("data-slick");
+  const slider = $(".js-goods-slider");
+
+  if (!slider) return;
+
+  const data = $(slider).attr("data-slick");
   const sliderOptions = JSON.parse(data);
-  const sliderSlidesCount = $(".goods__list .goods__item").length;
+  const sliderSlidesCount = $(".js-goods-item", slider).length;
 
   if (sliderSlidesCount > sliderOptions.slidesToShow) {
-    $(".goods__list").slick({
+    $(slider).slick({
       responsive: [
         {
           breakpoint: 1430,
@@ -194,14 +211,16 @@ function checkGoodsSlider() {
       ],
     });
   } else {
-    $(".goods__list").addClass("non-slider");
+    $(slider).addClass("non-slider");
   }
 }
 
 // Move some footer icons
 function moveFooterIcons() {
-  let block = $(".payments");
+  let block = $(".js-footer-icons");
   let windowInnerWidth = window.innerWidth;
+
+  if (!block) return;
 
   if (windowInnerWidth < 850) {
     $(".footer__top").append(block);
@@ -211,33 +230,55 @@ function moveFooterIcons() {
 }
 
 // Load comments from JSON
-function loadComments(target, commentsCount) {
+function loadComments(context) {
+  const target = $(".comments__list", context);
+  const commentsCount = $(".comments__item", context).length;
   const xhr = new XMLHttpRequest();
+
   xhr.open("GET", "../data.json", true);
   xhr.send();
 
   xhr.onload = function () {
-    let data = JSON.parse(xhr.responseText);
+    const data = JSON.parse(xhr.responseText);
     let result = "";
 
     for (let i = 0; i < 3; i++) {
       if (commentsCount + i >= data.length) {
-        $(target).next().find(".comments__btn").remove();
-        return;
+        break;
       }
 
-      let item = data[commentsCount + i];
-      let object = `
+      const item = data[commentsCount + i];
+      const object = `
       <li class="comments__item">
         <header class="comments__meta">
           <span class="comments__author">${item.author}</span>
           <span class="comments__date">/ ${item.date}</span>
           <ul class="rating__list" data-total-value="${item.ratingValue}">
-            <li class="rating__item">&#9733;</li>
-            <li class="rating__item">&#9733;</li>
-            <li class="rating__item">&#9733;</li>
-            <li class="rating__item">&#9733;</li>
-            <li class="rating__item">&#9733;</li>
+            <li class="rating__item">
+              <svg class="rating__icon">
+                <use xlink:href="img/icons/icons.svg#star"></use>
+              </svg>
+            </li>
+            <li class="rating__item">
+              <svg class="rating__icon">
+                <use xlink:href="img/icons/icons.svg#star"></use>
+              </svg>
+            </li>
+            <li class="rating__item">
+              <svg class="rating__icon">
+                <use xlink:href="img/icons/icons.svg#star"></use>
+              </svg>
+            </li>
+            <li class="rating__item">
+              <svg class="rating__icon">
+                <use xlink:href="img/icons/icons.svg#star"></use>
+              </svg>
+            </li>
+            <li class="rating__item">
+              <svg class="rating__icon">
+                <use xlink:href="img/icons/icons.svg#star"></use>
+              </svg>
+            </li>
           </ul>
         </header>
         <p class="comments__body">${item.comment}</p>
@@ -246,7 +287,7 @@ function loadComments(target, commentsCount) {
       result += object;
 
       if (commentsCount + i + 1 === data.length) {
-        $(target).parent().find(".comments__btn").remove();
+        $(target).parent().find(".js-load-comments").remove();
       }
     }
 
